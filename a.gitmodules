@@ -1,1 +1,2 @@
 git submodule add  -b 4.0.1   -- "https://github.com/opencv/opencv.git" "opencv"
+git submodule add  --force  -- "https://github.com/opencv/opencv.git" "opencv"
