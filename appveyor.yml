@@ -10,11 +10,11 @@ environment:
 matrix:
   fast_finish: true
   
-#cache:
-#  - C:\ant\apache-ant-1.10.5 -> appveyor_cache.txt
-#  - C:\projects\appveyor_opencv_java\build -> appveyor_cache.txt
-#   - C:\projects\appveyor_opencv_java\opencv -> appveyor_cache.txt
-#   - C:\projects\appveyor_opencv_java\opencv_contrib -> appveyor_cache.txt
+cache:
+  - C:\ant\apache-ant-1.10.5 -> appveyor_cache.txt
+  - %APPVEYOR_BUILD_FOLDER%\build -> appveyor_cache.txt
+  - %APPVEYOR_BUILD_FOLDER%\opencv -> appveyor_cache.txt
+  - %APPVEYOR_BUILD_FOLDER%\opencv_contrib -> appveyor_cache.txt
   
 init:
 - cmd: cmake --version
@@ -64,7 +64,7 @@ before_build:
     dir %APPVEYOR_BUILD_FOLDER%\build
 
 build_script:
-    - cmd: msbuild C:\projects\appveyor_opencv_java\build\OpenCV.sln /t:Rebuild /p:Configuration=Release;Platform=x64 /m
+    - cmd: msbuild %APPVEYOR_BUILD_FOLDER%\build\OpenCV.sln /t:Rebuild /p:Configuration=Release;Platform=x64 /m
 
 artifacts:
 - path: build\lib\Release\*.dll
