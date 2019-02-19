@@ -10,9 +10,9 @@ environment:
 matrix:
   fast_finish: true
   
-cache:
-  - C:\ant\apache-ant-1.10.5 -> appveyor_cache.txt
-  - C:\projects\appveyor_opencv_java\build -> appveyor_cache.txt
+#cache:
+#  - C:\ant\apache-ant-1.10.5 -> appveyor_cache.txt
+#  - C:\projects\appveyor_opencv_java\build -> appveyor_cache.txt
 #   - C:\projects\appveyor_opencv_java\opencv -> appveyor_cache.txt
 #   - C:\projects\appveyor_opencv_java\opencv_contrib -> appveyor_cache.txt
   
